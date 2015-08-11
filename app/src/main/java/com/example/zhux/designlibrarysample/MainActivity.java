@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     private static final String TAB_LAYOUT_FRAGMENT_TAG = "TAB_LAYOUT_FRAGMENT_TAG";
     private static final String FLOATING_LABEL_FRAGMENT_TAG = "FLOATING_LABEL_FRAGMENT_TAG";
+    private static final String FLOATING_ACTION_BUTTON_FRAGMENT_TAG = "FLOATING_ACTION_BUTTON_FRAGMENT_TAG";
 
     private ActionBarDrawerToggle drawerToggle;
     private DrawerLayout drawerLayout;
@@ -73,6 +74,11 @@ public class MainActivity extends AppCompatActivity
             case R.id.navigation_item_floating_label:
                 getSupportFragmentManager().beginTransaction()
                         .replace(R.id.content, FloatingLabelFragment.newInstance(), FLOATING_LABEL_FRAGMENT_TAG)
+                        .commit();
+                break;
+            case R.id.navigation_item_floating_action_button:
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.content, FloatingActionButtonFragment.newInstance(), FLOATING_ACTION_BUTTON_FRAGMENT_TAG)
                         .commit();
                 break;
         }

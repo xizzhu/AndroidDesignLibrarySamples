@@ -3,7 +3,10 @@
 
     <string name="navigation_item_tab_layout">Tab Layout</string>
     <string name="navigation_item_floating_label">Floating Label</string>
+    <string name="navigation_item_floating_action_button">Floating Action Button</string>
 
     <string name="user_name">User name</string>
     <string name="password">Password</string>
+    <string name="snackbar_message">It\'s a snackbar.</string>
+    <string name="dismiss">Dismiss</string>
 </resources>
