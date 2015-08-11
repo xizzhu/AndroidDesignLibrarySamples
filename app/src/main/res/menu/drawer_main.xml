@@ -3,5 +3,8 @@
         <item
             android:id="@+id/navigation_item_tab_layout"
             android:title="@string/navigation_item_tab_layout" />
+        <item
+            android:id="@+id/navigation_item_floating_label"
+            android:title="@string/navigation_item_floating_label" />
     </group>
 </menu>

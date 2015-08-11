@@ -2,4 +2,8 @@
     <string name="app_name">Design Library Sample</string>
 
     <string name="navigation_item_tab_layout">Tab Layout</string>
+    <string name="navigation_item_floating_label">Floating Label</string>
+
+    <string name="user_name">User name</string>
+    <string name="password">Password</string>
 </resources>
