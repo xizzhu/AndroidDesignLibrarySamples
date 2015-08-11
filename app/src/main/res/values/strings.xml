@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Design Library Sample</string>
+
+    <string name="navigation_item">Navigation Item</string>
+</resources>
