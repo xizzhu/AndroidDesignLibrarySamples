@@ -21,7 +21,7 @@ public class TabLayoutPagerAdapter extends PagerAdapter {
 
     @Override
     public Object instantiateItem(ViewGroup container, int position) {
-        TextView textView = (TextView) inflater.inflate(R.layout.page_tab_layout, container, false);
+        TextView textView = (TextView) inflater.inflate(R.layout.item_text, container, false);
         textView.setText(String.format("Item %d", position + 1));
         container.addView(textView);
         return textView;

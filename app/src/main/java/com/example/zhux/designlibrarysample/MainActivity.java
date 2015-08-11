@@ -1,13 +1,10 @@
 package com.example.zhux.designlibrarysample;
 
-import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity
@@ -15,8 +12,8 @@ public class MainActivity extends AppCompatActivity
     private static final String TAB_LAYOUT_FRAGMENT_TAG = "TAB_LAYOUT_FRAGMENT_TAG";
     private static final String FLOATING_LABEL_FRAGMENT_TAG = "FLOATING_LABEL_FRAGMENT_TAG";
     private static final String FLOATING_ACTION_BUTTON_FRAGMENT_TAG = "FLOATING_ACTION_BUTTON_FRAGMENT_TAG";
+    private static final String COLLAPSING_TOOLBAR_FRAGMENT_TAG = "COLLAPSING_TOOLBAR_FRAGMENT_TAG";
 
-    private ActionBarDrawerToggle drawerToggle;
     private DrawerLayout drawerLayout;
 
     @Override
@@ -25,10 +22,6 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
 
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        drawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, 0, 0);
-        drawerLayout.setDrawerListener(drawerToggle);
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.navigation_view);
         navigationView.setNavigationItemSelectedListener(this);
@@ -36,26 +29,6 @@ public class MainActivity extends AppCompatActivity
         if (savedInstanceState == null) {
             drawerLayout.openDrawer(GravityCompat.START);
         }
-    }
-
-    @Override
-    protected void onPostCreate(Bundle savedInstanceState) {
-        super.onPostCreate(savedInstanceState);
-        drawerToggle.syncState();
-    }
-
-    @Override
-    public void onConfigurationChanged(Configuration newConfig) {
-        super.onConfigurationChanged(newConfig);
-        drawerToggle.onConfigurationChanged(newConfig);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(final MenuItem item) {
-        if (item.getItemId() == android.support.v7.appcompat.R.id.home) {
-            return drawerToggle.onOptionsItemSelected(item);
-        }
-        return super.onOptionsItemSelected(item);
     }
 
     @Override
@@ -83,6 +56,11 @@ public class MainActivity extends AppCompatActivity
             case R.id.navigation_item_floating_action_button:
                 getSupportFragmentManager().beginTransaction()
                         .replace(R.id.content, FloatingActionButtonFragment.newInstance(), FLOATING_ACTION_BUTTON_FRAGMENT_TAG)
+                        .commit();
+                break;
+            case R.id.navigation_item_collapsing_toolbar:
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.content, CollapsingToolbarFragment.newInstance(), COLLAPSING_TOOLBAR_FRAGMENT_TAG)
                         .commit();
                 break;
         }

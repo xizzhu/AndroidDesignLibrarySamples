@@ -9,5 +9,8 @@
         <item
             android:id="@+id/navigation_item_floating_action_button"
             android:title="@string/navigation_item_floating_action_button" />
+        <item
+            android:id="@+id/navigation_item_collapsing_toolbar"
+            android:title="@string/navigation_item_collapsing_toolbar" />
     </group>
 </menu>
