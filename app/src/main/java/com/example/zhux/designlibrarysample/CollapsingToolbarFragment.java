@@ -4,7 +4,6 @@ import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
-import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
@@ -18,8 +17,6 @@ public class CollapsingToolbarFragment extends Fragment {
     public static CollapsingToolbarFragment newInstance() {
         return new CollapsingToolbarFragment();
     }
-
-    private CoordinatorLayout coordinatorLayout;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -40,17 +37,16 @@ public class CollapsingToolbarFragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false));
         recyclerView.setAdapter(new TextListAdapter(context));
 
-        coordinatorLayout = (CoordinatorLayout) view.findViewById(R.id.main_content);
         FloatingActionButton fab = (FloatingActionButton) view.findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final Snackbar snackbar = Snackbar.make(
-                        coordinatorLayout, R.string.snackbar_message, Snackbar.LENGTH_INDEFINITE);
+                Snackbar snackbar = Snackbar.make(
+                        v, R.string.snackbar_message, Snackbar.LENGTH_INDEFINITE);
                 snackbar.setAction(R.string.dismiss, new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        snackbar.dismiss();
+                        // do something
                     }
                 });
                 snackbar.show();
