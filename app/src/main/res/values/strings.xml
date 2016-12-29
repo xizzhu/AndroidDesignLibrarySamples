@@ -5,6 +5,11 @@
     <string name="navigation_item_floating_label">Floating Label</string>
     <string name="navigation_item_floating_action_button">Floating Action Button</string>
     <string name="navigation_item_collapsing_toolbar">Collapsing Toolbar</string>
+    <string name="navigation_item_bottom_navigation">Bottom Navigation</string>
+
+    <string name="tab1">Tab 1</string>
+    <string name="tab2">Tab 2</string>
+    <string name="tab3">Tab 3</string>
 
     <string name="user_name">User name</string>
     <string name="password">Password</string>

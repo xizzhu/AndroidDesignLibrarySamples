@@ -7,6 +7,7 @@ import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -28,9 +29,9 @@ public class CollapsingToolbarFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         CollapsingToolbarLayout collapsingToolbar = (CollapsingToolbarLayout) view.findViewById(R.id.collapsing_toolbar);
-        collapsingToolbar.setTitle(getString(R.string.app_name));
-        collapsingToolbar.setContentScrimColor(Color.BLACK);
-        collapsingToolbar.setCollapsedTitleTextColor(Color.WHITE);
+        collapsingToolbar.setCollapsedTitleTextColor(ContextCompat.getColor(getContext(), R.color.primary));
+        collapsingToolbar.setContentScrimColor(Color.WHITE);
+        collapsingToolbar.setExpandedTitleColor(Color.WHITE);
 
         RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.recycler_view);
         Context context = getActivity();

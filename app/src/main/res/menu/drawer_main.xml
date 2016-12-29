@@ -12,5 +12,8 @@
         <item
             android:id="@+id/navigation_item_collapsing_toolbar"
             android:title="@string/navigation_item_collapsing_toolbar" />
+        <item
+            android:id="@+id/navigation_item_bottom_navigation"
+            android:title="@string/navigation_item_bottom_navigation" />
     </group>
 </menu>
